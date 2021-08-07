@@ -39,3 +39,7 @@ vignettes/*.pdf
 .Renviron
 renv
 
+# Data file
+data
+
+
