@@ -134,6 +134,18 @@ pacman::p_load(
 ```
 
 ```{r}
+# Packages to download from Github (not available on CRAN)
+##########################################################
+
+# Development version of epicontacts (for transmission chains with a time x-axis)
+pacman::p_install_gh("reconhub/epicontacts@timeline")
+
+# The package for this handbook, which includes all the example data  
+pacman::p_install_gh("appliedepi/epirhandbook")
+```
+
+
+```{r}
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 

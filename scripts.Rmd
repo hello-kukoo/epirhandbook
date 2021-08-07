@@ -1,0 +1,36 @@
+---
+title: "Hands on script"
+output: html_notebook
+---
+
+```{r}
+current_week <- "2018-W10"   # this command creates the object current_week by assigning it a value
+current_week                 # this command prints the current value of current_week object in the console
+```
+
+```{r}
+linelist <- import(here("data", "linelist_raw.xlsx"))
+```
+
+```{r}
+# printed to R console only
+gen_out_table <- table(linelist$gender, linelist$outcome)
+gen_out_table
+```
+
+```{r}
+# Install (if necessary) and load packages for use
+pacman::p_load(rio, tidyverse, here)
+```
+
+```{r}
+# create new "bmi" column using dplyr syntax
+linelist <- linelist %>%
+    mutate(bmi = wt_kg / (ht_cm/100)^2)
+```
+
+```{r}
+linelist <- linelist %>% 
+    filter(age <= 50)
+```
+
